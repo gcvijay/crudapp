@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>C.R.U.D</title>
+    <style>
+        .container {
+            margin-left: 550px;
+            margin-top: 150px;
+            width: 300px;
+            height: 100px;
+            padding: 15px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Edit</h1>
+    <p style="margin-left:550px;"><a href=" ">Check data</a></p>
+    <div class="container">
+        <table>
+            <tbody>
+                <form action="/update/{{object.id}}" method="POST">
+                    {% csrf_token %}
+                    <tr>
+                        <td> Name</td>
+                        <td><input type="text" name="name" value={{object.name}}></td>
+                    </tr>
+                  <tr>
+                        <td> Sur_Name</td>
+                        <td><input type="text" name="sur_name" value={{object.sur_name}}></td>
+                    </tr>
+                  <tr>
+                        <td> Mobile</td>
+                        <td><input type="text" name="mobile" value={{object.mobile}}></td>
+                    </tr>
+                    <tr>
+                      <tr>
+                        <td> Email</td>
+                        <td><input type="text" name="email" value={{object.email}}></td>
+                    </tr>
+
+                        <td> Age</td>
+                        <td><input type="text" name="age" value={{object.age}}></td>
+                    </tr>
+                    <tr>
+                        <td> Occupation</td>
+                        <td><textarea name='occupation'>{{object.occupation}}</textarea></td>
+                    </tr>
+                    <tr>
+                        <td><button>Submit</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+
+
+
